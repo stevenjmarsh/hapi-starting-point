@@ -7,7 +7,7 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 * aqua
 * mullet
 
-## Components to use / consider
+## Components / Practices to use and/or consider
 * good, good-console
 * hapi-name-routes
 * lout
@@ -19,6 +19,8 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 * directory structure (best practices)
 * mongoDB
 * locale (internationalization)
+* code style - http://hapijs.com/styleguide 
 
 ### Features to implement (limited)
 * Accounts / user management
+    - email
