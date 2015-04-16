@@ -20,7 +20,7 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 | **Directory Structure** | client / public |          yes          |           yes          |    -   |
 | **Tasks**               |       gulp      |        wercker        |          gulp          |  grunt |
 | **Data Store**          |        -        |        mongodb        |            ?           |    ?   |
-| **Email**               |        -        |        EmailJS        |           yes          |    ?   |
+| **Email**               |        -        |        EmailJS        |        nodemailer      |    ?   |
 | **Logging**             |       good      |           ?           |            ?           |    ?   |
 | **API / Endpoints**     |        -        |          yes          |           yes          |    ?   |
 
