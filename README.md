@@ -12,7 +12,7 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 |---------------------|:---------------:|:---------------------:|:----------------------:|:------:|
 | **Web Server**           |       hapi      |        express        |          hapi          |  hapi  |
 | **Test**                |        -        |         mocha         |           lab          |  jest  |
-| **Authentication**      |        -        |    bcrypt,<br/>passport    | bcrypt,</br>hapi-basic-auth |    -   |
+| **Authentication**      |        -        |    bcrypt,<br/>passport    | bcrypt,<br/>hapi-basic-auth |    -   |
 | **User Mgmt**           |        -        |          yes          |           yes          |    -   |
 | **Config**              |   yes (assets)  |          yes          |           yes          |    ?   |
 | **Locale**              |        -        |          yes          |            -           |    ?   |
