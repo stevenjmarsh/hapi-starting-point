@@ -8,16 +8,16 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 * mullet
 
 ### Boilerplate Features
-|                     |    hapi-ninja   |      fs-accounts      |          aqua          | mullet |
-|---------------------|:---------------:|:---------------------:|:----------------------:|:------:|
-| **Web Server**           |       hapi      |        express        |          hapi          |  hapi  |
+|                         |    hapi-ninja   |      fs-accounts      |          aqua          | mullet |
+|-------------------------|:---------------:|:---------------------:|:----------------------:|:------:|
+| **Web Server**          |       hapi      |        express        |          hapi          |  hapi  |
 | **Test**                |        -        |         mocha         |           lab          |  jest  |
-| **Authentication**      |        -        |    bcrypt,<br/>passport    | bcrypt,<br/>hapi-basic-auth |    -   |
-| **User Mgmt**           |        -        |          yes          |           yes          |    -   |
-| **Config**              |   yes (assets)  |          yes          |           yes          |    ?   |
-| **Locale**              |        -        |          yes          |            -           |    ?   |
-| **UI**                  |        -        | bootstrap fontawesome |          react         |  react |
-| **Directory Structure** | client / public |          yes          |           yes          |    -   |
+| **Authentication**      |        -        |  bcrypt,<br/>passport | bcrypt,<br/>hapi-basic-auth |    -   |
+| **User Accounts**       |        -        |          yes          |           yes          |    -   |
+| **Config / Env**        |      assets     |          db           |           yes          |    -   |
+| **Locale**              |        -        |          yes          |            -           |    -   |
+| **UI**                  |        -        | bootstrap,<br/> fontawesome |          react         |  react |
+| **Structured Folders**  | server / public |     server / public   |     server / client    | public |
 | **Tasks**               |       gulp      |        wercker        |          gulp          |  grunt |
 | **Data Store**          |        -        |        mongodb        |         mongodb        |    -   |
 | **Email**               |        -        |        EmailJS        |        nodemailer      |    -   |
@@ -26,11 +26,11 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 
 ## Components / Practices to use and/or consider
 * good, good-console, good-file(tbd), good-http(tbd)
-* hapi-name-routes
+* hapi-named-routes
 * lout
 * joi
 * lab
-* gulp
+* gulp (or grunt)
 * (TBD) React
 * bcrypt, hapi-auth-basic
 * directory structure (best practices)
