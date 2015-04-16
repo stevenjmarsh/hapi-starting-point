@@ -34,7 +34,7 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 * (TBD) React
 * bcrypt, hapi-auth-basic
 * directory structure (best practices)
-* mongoDB
+* mongoDB, mongoose
 * locale (internationalization)
 * code style - http://hapijs.com/styleguide 
 
