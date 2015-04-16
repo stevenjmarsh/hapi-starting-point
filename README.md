@@ -19,8 +19,8 @@ A node / hapi web server boiler plate, taking aspects from several other popular
 | **UI**                  |        -        | bootstrap fontawesome |          react         |  react |
 | **Directory Structure** | client / public |          yes          |           yes          |    -   |
 | **Tasks**               |       gulp      |        wercker        |          gulp          |  grunt |
-| **Data Store**          |        -        |        mongodb        |            ?           |    ?   |
-| **Email**               |        -        |        EmailJS        |        nodemailer      |    ?   |
+| **Data Store**          |        -        |        mongodb        |         mongodb        |    -   |
+| **Email**               |        -        |        EmailJS        |        nodemailer      |    -   |
 | **Logging**             |       good      |           ?           |            ?           |    ?   |
 | **API / Endpoints**     |        -        |          yes          |           yes          |    ?   |
 
