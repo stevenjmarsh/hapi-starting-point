@@ -13,8 +13,8 @@
   "keywords": [
     "node",
     "hapi",
-    "mongodb",
-    "react"
+    "handlebars",
+    "bootstrap"
   ],
   "author": "Steve Marsh",
   "license": "MIT",
