@@ -12,6 +12,7 @@ A hapi boilerplate created from scratch, based on several popular existing boile
 This boilerplate was built referencing the following other boiler plates: hapi-ninja (by poetic-ninja), aqua (by jedireza), nodejs-account-boilerplate (by fs-opensource), and mullet (by lynnaloo).
 
 Folder structure, practices & style, and functionality were borrowed from each.
+(also this article, https://medium.com/zappos-engineering/manifests-plugins-and-schemas-organizing-your-hapi-application-68cf316730ef)
 
 Instead of forking and copying much of the source, this project was assembled from scratch to gain understanding of each piece individually, as well as what components are fundamental to common robust web servers.
 
@@ -55,3 +56,14 @@ At the onset, some goals in mind were to gain experience with the following comp
 * directory structure (best practices)
 * i18n ?, locale (internationalization)
 * TBD code style - http://hapijs.com/styleguide 
+
+## How'd I do? (my perspective)
+* ...self critique
+* directory structure: ended up with something that made sense, but not sure how standard
+* coding style, like to think I kept it neat, but know I need to be more consistent. I do strongly believe neat/readable code is extremely important. And willing to follow any agreed upon coding style.
+*
+
+## Micro blog
+* found it challenging to sort out / choose a project folder structure. Saw several examples. Some were simple, some were more complex. It was difficult to in some cases to ascertain what the advantages are of the various structures. That is where experience comes in to play. Ultimately, I will settle on something simple for now, which seems neat and organized. I likely over thought this at this stage of the game (which did cost me some time)
+* ...
+* 
