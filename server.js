@@ -19,13 +19,21 @@ server.views({
     layout: 'default'
 });
 
-// Export the server, to be required elsewhere...
-module.exports = server;
+var safeStart = function (err) {
+    if (err) {
+        console.log('Failed loading plugins:', err);
+    } else {
+        // Start the server
+        server.start(function () {
+            console.log('Server started at:', server.info.uri);
+        });
+    }
+};
 
 // Load all plugins (community/npm plugins first, then project specific),
 // then start server.
 server.register([
-    {   
+    {
         register: require('good'),
         options: {
             reporters: [{
@@ -37,14 +45,7 @@ server.register([
     {
         register: require('./server/controllers/index.js')
     }
-], function (err) {
+], safeStart);
 
-    if (err) {
-        console.log(err);   
-    } else {
-        // Start the server
-        server.start(function () {
-            console.log('Server started at:', server.info.uri); 
-        });
-    }
-});
+module.exports.server = server;
+module.exports.safeStart = safeStart;
