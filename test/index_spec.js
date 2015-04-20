@@ -48,4 +48,18 @@ describe('Server base routes', function () {
     });
   });
 
+  it('return a 404 status and custom 404 page if route not found', function (done) {
+    var options = {
+      method: 'GET',
+      url: '/somewrongpage'
+    };
+
+    server.inject(options, function(siResponse) {
+      expect(siResponse.statusCode).to.equal(404);
+      expect(siResponse.headers['content-type']).to.equal('text/html');
+      expect(siResponse.payload).to.contain('Page Not Found - 404');
+      expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
+      done();
+    });
+  });
 });
