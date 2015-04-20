@@ -7,8 +7,8 @@ var expect = require('chai').expect,
 var lab = exports.lab = Lab.script();
 
 /**
- * Set up BDD like function calls...
- */
+* Set up BDD like function calls...
+*/
 var describe = lab.describe,
   it = lab.it,
   before = lab.before,
@@ -17,8 +17,8 @@ var describe = lab.describe,
   afterEach = lab.afterEach;
 
 /**
- * Tests...
- */
+* Tests...
+*/
 describe('Server base routes', function () {
   it('root returns template using default layout with title successfully', function (done) {
     var options = {
