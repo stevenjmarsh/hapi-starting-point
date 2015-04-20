@@ -44,9 +44,9 @@ At the onset, some goals in mind were to gain experience with the following comp
 * ...
 
 ## Notes
-* hapi-ninja
-    - while implementing a partial with swig (using include; perhaps this is an incorrect way to do so), I tried to set the partialsPath option under server.views, hoping the server would use that to locate the partial html file (and not have to create a route path for it like hapi-ninja did). however that didn't work, couldn't find the file. followed hapi-ninja's method, which of course worked.
-
+* npm start & directory structure
+    - I opted with creating an executeable bin/www, matching a technique I've seen used with some express examples (and pointed out by a Code School instructor, also commonly used by developers at NodeJS)
+    - One reason I liked this, is because it the server class definition and creation in one file (server.js), and the launching or exection in another file. Seemed like a sensible separation of concerns.
 
 ## Components / Practices to use and/or consider
 * good, good-console
@@ -57,8 +57,7 @@ At the onset, some goals in mind were to gain experience with the following comp
 * i18n ?, locale (internationalization)
 * TBD code style - http://hapijs.com/styleguide 
 
-## How'd I do? (my perspective)
-* ...self critique
+## How'd I do? (my perspective, a self critique...)
 * directory structure: ended up with something that made sense, but not sure how standard
 * coding style, like to think I kept it neat, but know I need to be more consistent. I do strongly believe neat/readable code is extremely important. And willing to follow any agreed upon coding style.
 *
