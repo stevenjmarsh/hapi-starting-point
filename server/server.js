@@ -5,6 +5,7 @@ var Hapi = require('hapi');
 
 // Create server, and set initial configuration settings
 var server = new Hapi.Server();
+
 server.connection({
     port: 3000
 });
@@ -19,17 +20,6 @@ server.views({
     layout: 'default'
 });
 
-var safeStart = function (err) {
-    if (err) {
-        console.log('Failed loading plugins:', err);
-    } else {
-        // Start the server
-        server.start(function () {
-            console.log('Server started at:', server.info.uri);
-        });
-    }
-};
-
 // Load all plugins (community/npm plugins first, then project specific),
 // then start server.
 server.register([
@@ -43,9 +33,10 @@ server.register([
         }
     },
     {
-        register: require('./server/controllers/index.js')
+        register: require('../server/controllers/index')
     }
-], safeStart);
+], function (err) {
+    if (err) { throw err; }
+});
 
-module.exports.server = server;
-module.exports.safeStart = safeStart;
+module.exports = server;
