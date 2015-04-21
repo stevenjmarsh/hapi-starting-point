@@ -9,11 +9,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <img class='logo' src="images/projects.png">
-  <ul>
-    <li><a href="{{path.index}}">Home</a></li>
-    <li><a href="{{path.about}}">About</a></li>
-  </ul>
+  {{> navbar}}
   <div class="container">
     {{! each view gets inserted here }}
     {{{content}}}

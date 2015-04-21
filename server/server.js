@@ -17,11 +17,11 @@ server.views({
   },
   path: './server/views',
   layoutPath: './server/views/layout',
-  layout: 'default'
+  layout: 'default',
+  partialsPath: './server/views/partials'
 });
 
-// Load all plugins (community/npm plugins first, then project specific),
-// then start server.
+// Load all plugins (community/npm plugins first, then project specific)
 server.register([
   {
     register: require('good'),
