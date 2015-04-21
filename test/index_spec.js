@@ -20,46 +20,66 @@ var describe = lab.describe,
 * Tests...
 */
 describe('Server base routes', function () {
-  it('root returns template using default layout with title successfully', function (done) {
-    var options = {
-      method: 'GET',
-      url: '/'
-    };
 
-    server.inject(options, function(siResponse) {
-      expect(siResponse.statusCode).to.equal(200);
-      expect(siResponse.headers['content-type']).to.equal('text/html');
-      expect(siResponse.payload).to.contain('<title>Hapi-Handlebars</title>');
-      done();
+  describe('Root / Home', function() {
+    it('root returns template using default layout with title successfully', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(200);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('<title>Hapi-Handlebars</title>');
+        done();
+      });
+    });
+
+    it('root returns index content with header successfully', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(200);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('<h1>Hello World!</h1>');
+        done();
+      });
+    });
+
+    it('return a 404 status and custom 404 page if route not found', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/somewrongpage'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(404);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('Page Not Found - 404');
+        expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
+        done();
+      });
     });
   });
 
-  it('root returns index content with header successfully', function (done) {
-    var options = {
-      method: 'GET',
-      url: '/'
-    };
+  describe('About', function() {
+    it('returns the about page with content and success status', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/about'
+      };
 
-    server.inject(options, function(siResponse) {
-      expect(siResponse.statusCode).to.equal(200);
-      expect(siResponse.headers['content-type']).to.equal('text/html');
-      expect(siResponse.payload).to.contain('<h1>Hello World!</h1>');
-      done();
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(200);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('<h1>About</h1>');
+        done();
+      });
     });
   });
 
-  it('return a 404 status and custom 404 page if route not found', function (done) {
-    var options = {
-      method: 'GET',
-      url: '/somewrongpage'
-    };
-
-    server.inject(options, function(siResponse) {
-      expect(siResponse.statusCode).to.equal(404);
-      expect(siResponse.headers['content-type']).to.equal('text/html');
-      expect(siResponse.payload).to.contain('Page Not Found - 404');
-      expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
-      done();
-    });
-  });
 });

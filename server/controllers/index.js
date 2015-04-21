@@ -16,6 +16,16 @@ exports.register = function (server, options, next) {
     },
     {
       method: 'GET',
+      path: '/about',
+      config: {
+        handler: function (request, reply) {
+          reply.view('about');
+        },
+        id: 'about'
+      }
+    },
+    {
+      method: 'GET',
       path: '/{glob*}',
       config: {
         handler: function (request, reply) {

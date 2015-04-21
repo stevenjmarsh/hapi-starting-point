@@ -1,8 +1,10 @@
 # ToDo
-* config (port)
-* assets (main.css)
+* home, about pages
 * Bootstrap (nav bar)
     - footer  (partial template?)
+* favicon
+* config (port)
+* assets (main.css)
 * localization (International)
 
 # hapi-boilerplate
