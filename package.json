@@ -27,7 +27,8 @@
     "good": "^6.1.0",
     "good-console": "^5.0.0",
     "handlebars": "^3.0.1",
-    "hapi": "^8.4.0"
+    "hapi": "^8.4.0",
+    "hapi-named-routes": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^2.2.0",

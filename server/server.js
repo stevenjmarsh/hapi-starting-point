@@ -33,6 +33,12 @@ server.register([
     }
   },
   {
+    register: require('hapi-named-routes')
+  },
+  {
+    register: require('../server/assets/index')
+  },
+  {
     register: require('../server/controllers/index')
   }
 ], function (err) {
