@@ -12,6 +12,16 @@ exports.register = function (server, options, next) {
         },
         id: 'images'
       }
+    },
+    {
+      method: 'GET',
+      path: '/css/{glob*}',
+      config: {
+        handler: {
+          directory: { path: './public/css' }
+        },
+        id: 'css'
+      }
     }
   ]);
 
