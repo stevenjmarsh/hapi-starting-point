@@ -49,6 +49,7 @@ At the onset, some goals in mind were to gain experience with the following comp
     - I opted with creating an executeable bin/www, matching a technique I've seen used with some express examples (and pointed out by a Code School instructor, also commonly used by developers at NodeJS)
     - One reason I liked this, is because it the server class definition and creation in one file (server.js), and the launching or exection in another file. Seemed like a sensible separation of concerns.
 * Both hapi-ninja and aqua boilerplates registered their routes as plugins. I followed suit
+* Explicitly serve a favicon
 
 ## Components / Practices to use and/or consider
 * good, good-console

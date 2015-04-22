@@ -22,6 +22,16 @@ exports.register = function (server, options, next) {
         },
         id: 'css'
       }
+    },
+    {
+      method: 'GET',
+      path: '/favicon.ico',
+      config: {
+        handler: {
+          file: './public/images/favicon.png'
+        },
+        id: 'favicon'
+      }
     }
   ]);
 

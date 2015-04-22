@@ -21,7 +21,8 @@ var describe = lab.describe,
 */
 describe('Server base routes', function () {
 
-  describe('Root / Home', function() {
+  describe('Default Layout and Partials', function() {
+
     it('root returns template using default layout with title successfully', function (done) {
       var options = {
         method: 'GET',
@@ -36,7 +37,99 @@ describe('Server base routes', function () {
       });
     });
 
-    it('root returns index content with header successfully', function (done) {
+    it('displays the nav bar partial successfully', function(done) {
+      var options = {
+        method: 'GET',
+        url: '/about'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(200);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('some bootstrap nav bar text');
+        done();
+      });
+    });
+
+    it('successfully gets our locally served style.css', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/css/style.css'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.satisfy(function (num) {
+          return num === 200 || num === 304;
+        });
+        done();
+      });
+    });
+
+    it('successfully gets asset images', function(done) {
+      var options = {
+        method: 'GET',
+        url: '/images/projects.png'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.satisfy(function (num) {
+          return num === 200 || num === 304;
+        });
+        done();
+      });
+    });
+
+    it('successfully serves favicon.ico', function(done) {
+      var options = {
+        method: 'GET',
+        url: '/favicon.ico'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.satisfy(function (num) {
+          return num === 200 || num === 304;
+        });
+        done();
+      });
+    });
+  });
+
+  describe('Missing pages, bad routes', function() {
+
+    it('a top level (first segment) bad route returns a 404 status and custom 404 page', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/wrongpage'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(404);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('Page Not Found - 404');
+        expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
+        done();
+      });
+    });
+
+    it('a lower level (second segment) bad route returns a 404 status and custom 404 page', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/about/otherwrongpage'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(404);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('Page Not Found - 404');
+        expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
+        done();
+      });
+    });
+  });
+
+  describe('Home page (root)', function() {
+
+    it('returns page specific content and success status', function (done) {
       var options = {
         method: 'GET',
         url: '/'
@@ -50,24 +143,11 @@ describe('Server base routes', function () {
       });
     });
 
-    it('return a 404 status and custom 404 page if route not found', function (done) {
-      var options = {
-        method: 'GET',
-        url: '/somewrongpage'
-      };
-
-      server.inject(options, function(siResponse) {
-        expect(siResponse.statusCode).to.equal(404);
-        expect(siResponse.headers['content-type']).to.equal('text/html');
-        expect(siResponse.payload).to.contain('Page Not Found - 404');
-        expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
-        done();
-      });
-    });
   });
 
   describe('About', function() {
-    it('returns the about page with content and success status', function (done) {
+
+    it('returns page specific content and success status', function (done) {
       var options = {
         method: 'GET',
         url: '/about'
