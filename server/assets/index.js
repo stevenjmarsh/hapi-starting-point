@@ -30,6 +30,7 @@ exports.register = function (server, options, next) {
         handler: {
           file: './public/images/favicon.png'
         },
+        cache: { expiresIn: 86400000, privacy: 'public' },
         id: 'favicon'
       }
     }
