@@ -25,6 +25,16 @@ exports.register = function (server, options, next) {
     },
     {
       method: 'GET',
+      path: '/js/{glob*}',
+      config: {
+        handler: {
+          directory: { path: './public/js' }
+        },
+        id: 'js'
+      }
+    },
+    {
+      method: 'GET',
       path: '/favicon.ico',
       config: {
         handler: {

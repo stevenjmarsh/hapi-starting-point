@@ -22,6 +22,7 @@ Instead of forking and copying much of the source, this project was assembled fr
 * fs-accounts
 * aqua
 * mullet
+* Start Bootstrap - Modern Business HTML Template
 
 ## Coding Style 
 Please note, in this project I am not following any particular documented coding style, but habits I have acquired over time (many from my days with C).
@@ -49,7 +50,13 @@ At the onset, some goals in mind were to gain experience with the following comp
     - I opted with creating an executeable bin/www, matching a technique I've seen used with some express examples (and pointed out by a Code School instructor, also commonly used by developers at NodeJS)
     - One reason I liked this, is because it the server class definition and creation in one file (server.js), and the launching or exection in another file. Seemed like a sensible separation of concerns.
 * Both hapi-ninja and aqua boilerplates registered their routes as plugins. I followed suit
-* Explicitly serve a favicon
+* Explicitly caches and serves the favicon
+* Navbar menu affects
+    - I initially wrote the navbar functionality after viewing the Code School Bootstrap online course
+    - It was missing some desired functionality (and also strayed a little from Bootstrap practices and documentation)
+        + use of data-toggle and data-target on the dropdown menu  
+    - I ended up reviewing the bootstrap docs in detail, and finding a helpful video on YouTube by Ben Bigras (https://www.youtube.com/watch?v=lx0IysyYLH0), to help add additional functionality (hover over dropdown displays dropdown, navbar link as 'active' based on which page is being shown)
+* ...
 
 ## Components / Practices to use and/or consider
 * good, good-console

@@ -53,10 +53,24 @@ describe('Server base routes', function () {
     // }
     );
 
-    it('successfully gets our locally served style.css', function (done) {
+    it('successfully gets our locally served main.css', function (done) {
       var options = {
         method: 'GET',
-        url: '/css/style.css'
+        url: '/css/main.css'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.satisfy(function (num) {
+          return num === 200 || num === 304;
+        });
+        done();
+      });
+    });
+
+    it('successfully gets our locally served main.js', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/js/main.js'
       };
 
       server.inject(options, function(siResponse) {
@@ -140,7 +154,7 @@ describe('Server base routes', function () {
       server.inject(options, function(siResponse) {
         expect(siResponse.statusCode).to.equal(200);
         expect(siResponse.headers['content-type']).to.equal('text/html');
-        expect(siResponse.payload).to.contain('<h1>Hello World!</h1>');
+        expect(siResponse.payload).to.contain('<h2>The Fastest Way to Space</h2>');
         done();
       });
     });
