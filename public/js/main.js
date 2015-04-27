@@ -10,7 +10,7 @@ $(document).ready(function () {
     $('.dropdown-menu').parent().addClass('active');
   }
 
-  // Optional functionality to make dropdown menus display, on hover
+  // Optional functionality to make dropdown menus display on hover
   $('ul.nav li.dropdown').hover(function () {
     $('.dropdown-menu', this).fadeIn();
   }, function () {

@@ -37,22 +37,6 @@ describe('Server base routes', function () {
       });
     });
 
-    it('displays the nav bar partial successfully'
-      // , function(done) {
-      // var options = {
-      //   method: 'GET',
-      //   url: '/about'
-      // };
-
-      // server.inject(options, function(siResponse) {
-      //   expect(siResponse.statusCode).to.equal(200);
-      //   expect(siResponse.headers['content-type']).to.equal('text/html');
-      //   expect(siResponse.payload).to.contain('some bootstrap nav bar text');
-      //   done();
-      // });
-    // }
-    );
-
     it('successfully gets our locally served main.css', function (done) {
       var options = {
         method: 'GET',
@@ -109,6 +93,24 @@ describe('Server base routes', function () {
       });
     });
   });
+
+  describe('Navbar', function() {
+
+    it('displays the nav bar partial successfully', function(done) {
+      var options = {
+        method: 'GET',
+        url: '/about'
+      };
+
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(200);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain('Toggle navigation_adf');
+        done();
+      });
+    });
+  });
+
 
   describe('Missing pages, bad routes', function() {
 
