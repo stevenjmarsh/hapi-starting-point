@@ -51,10 +51,10 @@ describe('Server base routes', function () {
       });
     });
 
-    it('successfully gets our locally served main.js', function (done) {
+    it('successfully gets our locally served hbp_navbar.js', function (done) {
       var options = {
         method: 'GET',
-        url: '/js/main.js'
+        url: '/js/hbp_navbar.js'
       };
 
       server.inject(options, function(siResponse) {
