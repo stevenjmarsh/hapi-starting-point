@@ -20,9 +20,9 @@
   <script src="js/hbp_navbar.js"></script>
   <script>
     $(document).ready(function () {
-      hbpNavbar.setActiveMenuItems();
+      hbpNavbar.setActiveMenuItems($('#current-page').data("menu"));
       hbpNavbar.setHoverDropdownMenu();
-    })
+    });
   </script>
 </body>
 </html>
