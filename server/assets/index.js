@@ -5,7 +5,7 @@ exports.register = function (server, options, next) {
   server.route([
     {
       method: 'GET',
-      path: '/images/{glob*}',
+      path: '/public/images/{glob*}',
       config: {
         handler: {
           directory: { path: './public/images' }
@@ -15,7 +15,7 @@ exports.register = function (server, options, next) {
     },
     {
       method: 'GET',
-      path: '/css/{glob*}',
+      path: '/public/css/{glob*}',
       config: {
         handler: {
           directory: { path: './public/css' }
@@ -25,7 +25,7 @@ exports.register = function (server, options, next) {
     },
     {
       method: 'GET',
-      path: '/js/{glob*}',
+      path: '/public/js/{glob*}',
       config: {
         handler: {
           directory: { path: './public/js' }
@@ -35,7 +35,7 @@ exports.register = function (server, options, next) {
     },
     {
       method: 'GET',
-      path: '/favicon.ico',
+      path: '/public/images/favicon.ico',
       config: {
         handler: {
           file: './public/images/rocket_favicon.ico'

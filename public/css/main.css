@@ -1,7 +1,20 @@
+/* Bootstrap related overrides or additions */
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+.navbar-logo {
+    position: absolute;
+    top: 10px;
+    height: 32px;
+    width: 32px;
+}
+
+.navbar-brand-label {
+    margin-left: 35px;
+}
+
+/* Other CSS */
 .features .glyphicon {
   font-size: 32px;
   color: #2c3e50;

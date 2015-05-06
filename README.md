@@ -31,6 +31,7 @@ Instead of forking and copying much of the source, this project was assembled fr
             * ```<div data-menu='homepage' id=...```
         + in the nav menu, the corresponding menu item must have the data-menu value set 
             * ```<li data-menu='homepage'>...```
+* Images (a logo, favicon, and sample graphic) are used/referenced in the source code, but not stored in the repository. Tests will fail, reminding you to provide those images or update those image names.
 
 ### Tasks using Gulp
 * clear - clears the console (typically used before any of the 'watch' based tasks are rerun)
