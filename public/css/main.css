@@ -23,3 +23,8 @@ body {
 .contact-glyph {
   margin-right: 5px;
 }
+
+.main-image {
+  height: 85%;
+  width: 85%;
+}
