@@ -1,6 +1,7 @@
 # keep the images folder (use .gitkeep), but do not store image files
 *.png
 *.jpg
+*.ico
 
 # Logs
 logs
