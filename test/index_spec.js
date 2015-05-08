@@ -120,7 +120,7 @@ describe('Server base routes', function () {
         expect(siResponse.statusCode).to.equal(200);
         expect(siResponse.headers['content-type']).to.equal('text/html');
         expect(siResponse.payload).to
-          .contain('<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">');
+          .contain('<nav class="navbar navbar-inverse navbar-fixed-top">');
         done();
       });
     });

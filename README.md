@@ -72,6 +72,7 @@ I do however feel readable code and consistent style are very important. And, am
     - It was missing some desired functionality (and also strayed a little from Bootstrap practices and documentation)
         + use of data-toggle and data-target on the dropdown menu  
     - I ended up reviewing the bootstrap docs in detail, and finding a helpful video on YouTube by Ben Bigras (https://www.youtube.com/watch?v=lx0IysyYLH0), to help add additional functionality (hover over dropdown displays dropdown, navbar link as 'active' based on which page is being shown)
+        + NOTE: I did refactor the code for adding the 'active' class, and instead of using javascript used CSS to implement hover/dropdown
 * ...
 
 ### Components / Practices to use and/or consider

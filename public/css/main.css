@@ -14,6 +14,13 @@ body {
     margin-left: 35px;
 }
 
+/* display dropdown menu on hover (prevent on collapsed navbar, smaller screens) */
+@media (min-width: 979px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+
 /* Other CSS */
 .features .glyphicon {
   font-size: 32px;

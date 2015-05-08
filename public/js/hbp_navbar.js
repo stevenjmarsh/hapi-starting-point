@@ -8,14 +8,5 @@ var hbpNavbar =  {
     if ($('.dropdown-menu > li.active').length) {
       $('.dropdown-menu').parent().addClass('active');
     }
-  },
-
-  setHoverDropdownMenu: function () {
-    // Optional functionality to make dropdown menus display on hover
-    $('ul.nav li.dropdown').hover(function () {
-      $('.dropdown-menu', this).fadeIn();
-    }, function () {
-      $('.dropdown-menu', this).fadeOut('fast');
-    });
   }
 };
