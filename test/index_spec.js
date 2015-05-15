@@ -82,7 +82,7 @@ describe('Server base routes', function () {
     it('successfully gets logo image', function(done) {
       var options = {
         method: 'GET',
-        url: '/public/images/rocket_logo.png'
+        url: '/public/images/mountain_logo.png'
       };
 
       server.inject(options, function(siResponse) {
@@ -160,7 +160,7 @@ describe('Server base routes', function () {
     });
   });
 
-  describe('Home page (root)', function() {
+  describe('Home page', function() {
 
     it('returns page specific content and success status', function (done) {
       var options = {
@@ -171,14 +171,14 @@ describe('Server base routes', function () {
       server.inject(options, function(siResponse) {
         expect(siResponse.statusCode).to.equal(200);
         expect(siResponse.headers['content-type']).to.equal('text/html');
-        expect(siResponse.payload).to.contain('<h2>The Fastest Way to Space</h2>');
+        expect(siResponse.payload).to.contain('<h2>A Main Section</h2>');
         done();
       });
     });
 
   });
 
-  describe('About', function() {
+  describe('About page', function() {
 
     it('returns page specific content and success status', function (done) {
       var options = {

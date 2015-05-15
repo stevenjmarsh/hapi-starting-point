@@ -38,7 +38,7 @@ exports.register = function (server, options, next) {
       path: '/public/images/favicon.ico',
       config: {
         handler: {
-          file: './public/images/rocket_favicon.ico'
+          file: './public/images/mountain_favicon.ico'
         },
         cache: { expiresIn: 86400000, privacy: 'public' },
         id: 'favicon'
