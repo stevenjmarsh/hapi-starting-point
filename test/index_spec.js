@@ -96,7 +96,7 @@ describe('Server base routes', function () {
     it('successfully serves favicon.ico', function(done) {
       var options = {
         method: 'GET',
-        url: '/public/images/favicon.ico'
+        url: '/favicon.ico'
       };
 
       server.inject(options, function(siResponse) {

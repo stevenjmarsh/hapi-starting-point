@@ -35,7 +35,7 @@ exports.register = function (server, options, next) {
     },
     {
       method: 'GET',
-      path: '/public/images/favicon.ico',
+      path: '/favicon.ico',
       config: {
         handler: {
           file: './public/images/mountain_favicon.ico'
