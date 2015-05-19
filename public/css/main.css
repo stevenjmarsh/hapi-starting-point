@@ -35,3 +35,53 @@ body {
   height: 85%;
   width: 85%;
 }
+
+.error-page {
+  padding: 10px 0px 10px 0px;
+  color: red;
+}
+
+.footer-format {
+  color: #ecf0f1;
+  background-color: #34495e;
+  margin-top: 30px;
+}
+
+#footer-links ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 10px 0 4px;
+  padding: 0;
+}
+
+#footer-links ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#footer-links a {
+  color: #ecf0f1;
+}
+
+#footer-links p {
+  font-size: 12px;
+  color: #bdc3c7;
+}
+
+#footer-social-links ul {
+  list-style-type: none;
+  text-align: right;
+  margin: 12px 0 16px;
+  padding: 0;
+}
+
+#footer-social-links ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#footer-social-links a {
+  color: #ecf0f1;
+  font-size: 26px;
+}
+
