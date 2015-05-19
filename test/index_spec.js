@@ -138,8 +138,7 @@ describe('Server base routes', function () {
       server.inject(options, function(siResponse) {
         expect(siResponse.statusCode).to.equal(404);
         expect(siResponse.headers['content-type']).to.equal('text/html');
-        expect(siResponse.payload).to.contain('Page Not Found - 404');
-        expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
+        expect(siResponse.payload).to.contain('<h1><span class="error-404">404</span></h1>');
         done();
       });
     });
@@ -153,8 +152,7 @@ describe('Server base routes', function () {
       server.inject(options, function(siResponse) {
         expect(siResponse.statusCode).to.equal(404);
         expect(siResponse.headers['content-type']).to.equal('text/html');
-        expect(siResponse.payload).to.contain('Page Not Found - 404');
-        expect(siResponse.payload).to.contain('<p>Missing page or incorrect route.</p>');
+        expect(siResponse.payload).to.contain('<h1><span class="error-404">404</span></h1>');
         done();
       });
     });

@@ -29,7 +29,7 @@ exports.register = function (server, options, next) {
       path: '/{glob*}',
       config: {
         handler: function (request, reply) {
-          reply.view('404', { title: 'Page Not Found - 404'}).code(404);
+          reply.view('404').code(404);
         },
         id: '404'
       }

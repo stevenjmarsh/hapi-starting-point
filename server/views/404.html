@@ -1,3 +1,23 @@
 {{!< layout/default }}
-  <h1 class='error-page'>{{title}}</h1>
-  <p class='error-page'>Missing page or incorrect route.</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">404
+        <small>Page Not Found</small>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="jumbotron">
+        <h1><span class="error-404">404</span></h1>
+        <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+        <ul>
+          <li><a href="{{path.index}}">Home</a></li>
+          <li><a href="{{path.about}}">About</a></li>
+          <li><a href="{{path.contact}}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
