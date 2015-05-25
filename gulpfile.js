@@ -10,6 +10,7 @@ var paths = {
     './server.js',
     './assets/**/*.js',
     './controllers/**/*.js',
+    './routes/**/*.js',
     './public/**/*.js',
     './test/**/*.js'
   ],
@@ -18,6 +19,7 @@ var paths = {
     './server.js',
     './assets/**/*.js',
     './controllers/**/*.js',
+    './routes/**/*.js',
     './public/**/*.js',
     './public/**/*.css',
     './views/**/*.html'

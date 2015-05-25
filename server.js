@@ -1,7 +1,9 @@
 'use strict';
 
 // Dependencies...
-var Hapi = require('hapi');
+var Hapi = require('hapi'),
+  assetRoutes = require('./routes/assets.js'),
+  indexRoutes = require('./routes/index.js');
 
 // Create server, and set initial configuration settings
 var server = new Hapi.Server();
@@ -24,6 +26,7 @@ server.views({
 // Load all plugins (community/npm plugins first, then project specific)
 server.register([
   {
+    // Logger
     register: require('good'),
     options: {
       reporters: [{
@@ -34,17 +37,14 @@ server.register([
   },
   {
     register: require('hapi-named-routes')
-  },
-  {
-    register: require('./assets/index')
-  },
-  {
-    register: require('./controllers/index')
   }
 ], function (err) {
   if (err) {
     console.log('Failed loading plugin:', err);
   }
 });
+
+server.route(assetRoutes);
+server.route(indexRoutes);
 
 module.exports = server;
