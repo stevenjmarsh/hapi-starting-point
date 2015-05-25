@@ -6,21 +6,21 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon');
 
 var paths = {
-  jsSource: ['./server.js', './server/**/*.js', './public/**/*.js', './test/**/*.js'],
-  allSource: [
+  jsSource: [
     './server.js',
-    './server/**/*.js',
-    './server/**/*.html',
+    './assets/**/*.js',
+    './controllers/**/*.js',
     './public/**/*.js',
-    './public/**/*.css'
+    './test/**/*.js'
   ],
   allTestSource: [
     './test/**/*.js',
     './server.js',
-    './server/**/*.js',
-    './server/**/*.html',
+    './assets/**/*.js',
+    './controllers/**/*.js',
     './public/**/*.js',
-    './public/**/*.css'
+    './public/**/*.css',
+    './views/**/*.html'
   ]
 };
 
