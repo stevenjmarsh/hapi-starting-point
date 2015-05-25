@@ -7,21 +7,19 @@ var gulp = require('gulp'),
 
 var paths = {
   jsSource: [
-    './server.js',
-    './assets/**/*.js',
     './controllers/**/*.js',
-    './routes/**/*.js',
     './public/**/*.js',
+    './routes/**/*.js',
+    './server.js',
     './test/**/*.js'
   ],
   allTestSource: [
-    './test/**/*.js',
-    './server.js',
-    './assets/**/*.js',
     './controllers/**/*.js',
-    './routes/**/*.js',
     './public/**/*.js',
     './public/**/*.css',
+    './routes/**/*.js',
+    './server.js',
+    './test/**/*.js',
     './views/**/*.html'
   ]
 };

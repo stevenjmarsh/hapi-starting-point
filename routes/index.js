@@ -1,40 +1,26 @@
 'use strict';
 
+var indexControllers = require('../controllers/index');
+
 // Base routes for default index/root path, 404 error page, and others...
 module.exports = [{
   method: 'GET',
   path: '/',
-  config: {
-    handler: function (request, reply) {
-      reply.view('index');
-    },
-    id: 'index'
-  }
+  handler: indexControllers.index,
+  config: { id: 'index' }
 }, {
   method: 'GET',
   path: '/about',
-  config: {
-    handler: function (request, reply) {
-      reply.view('about');
-    },
-    id: 'about'
-  }
+  handler: indexControllers.about,
+  config: { id: 'about' }
 }, {
   method: 'GET',
   path: '/contact',
-  config: {
-    handler: function (request, reply) {
-      reply.view('contact');
-    },
-    id: 'contact'
-  }
+  handler: indexControllers.contact,
+  config: { id: 'contact' }
 }, {
   method: 'GET',
   path: '/{glob*}',
-  config: {
-    handler: function (request, reply) {
-      reply.view('404').code(404);
-    },
-    id: '404'
-  }
+  handler: indexControllers.error404,
+  config: { id: 'error404' }
 }];
