@@ -2,7 +2,7 @@
 
 var expect = require('chai').expect,
   Lab = require('lab'),
-  server = require('../server/server');
+  server = require('../server');
 
 var lab = exports.lab = Lab.script();
 

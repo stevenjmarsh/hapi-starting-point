@@ -1,7 +1,7 @@
 {
   "name": "hapi-boilerplate",
   "version": "0.1.0",
-  "description": "A node hapi boilerplate using mongodb and react.",
+  "description": "A node hapi boilerplate using handlebars and bookshelf.",
   "main": "server.js",
   "scripts": {
     "test": "lab -c",
@@ -15,6 +15,7 @@
     "node",
     "hapi",
     "handlebars",
+    "bookshelf",
     "bootstrap"
   ],
   "author": "Steve Marsh",

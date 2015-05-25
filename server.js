@@ -15,10 +15,10 @@ server.views({
   engines: {
       html: require('handlebars')
   },
-  path: './server/views',
-  layoutPath: './server/views/layout',
+  path: './views',
+  layoutPath: './views/layout',
   layout: 'default',
-  partialsPath: './server/views/partials'
+  partialsPath: './views/partials'
 });
 
 // Load all plugins (community/npm plugins first, then project specific)
@@ -36,10 +36,10 @@ server.register([
     register: require('hapi-named-routes')
   },
   {
-    register: require('../server/assets/index')
+    register: require('./assets/index')
   },
   {
-    register: require('../server/controllers/index')
+    register: require('./controllers/index')
   }
 ], function (err) {
   if (err) {
