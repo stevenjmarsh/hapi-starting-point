@@ -241,4 +241,45 @@ describe('Contacts API', function() {
       });
     });
   });
+
+  describe('Validation', function() {
+    it('fails creating a contact with first_name length < min', function (done) {
+      localContact.contact.first_name = 'J';
+
+      var options = {
+        method: 'POST',
+        url: '/api/contacts',
+        payload: JSON.stringify(localContact)
+      };
+
+      server.inject(options, function (response) {
+        expect(response.statusCode).to.equal(400);
+        expect(response.result.validation.keys[0]).to.equal('contact.first_name');
+
+        done();
+      });
+    });
+
+    it('fails creating a contact when missing last_name', function (done) {
+      localContact.contact.first_name = 'Jack';
+      localContact.contact.last_name = undefined;
+
+      var options = {
+        method: 'POST',
+        url: '/api/contacts',
+        payload: JSON.stringify(localContact)
+      };
+
+      server.inject(options, function (response) {
+        var result = response.result;
+
+        expect(response.statusCode).to.equal(400);
+        expect(result.validation.keys[0]).to.equal('contact.last_name');
+        expect(result.message).to.contains('"last_name" is required');
+
+        done();
+      });
+    });
+  });
+
 });

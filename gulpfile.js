@@ -15,7 +15,8 @@ var paths = {
     './routes/**/*.js',
     './server.js',
     './test/**/*.js',
-    './utils/**/*.js'
+    './utils/**/*.js',
+    './validators/**/*.js'
   ],
   allTestSource: [
     './config/**/*.js',
@@ -27,6 +28,7 @@ var paths = {
     './server.js',
     './test/**/*.js',
     './utils/**/*.js',
+    './validators/**/*.js',
     './views/**/*.html'
   ]
 };
