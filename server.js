@@ -2,21 +2,19 @@
 
 // Dependencies...
 var Hapi = require('hapi'),
+  config = require('./config/settings'),
   assetRoutes = require('./routes/assets.js'),
+  apiRoutes = require('./routes/api.js'),
   indexRoutes = require('./routes/index.js');
 
 // Create server, and set initial configuration settings
 var server = new Hapi.Server();
 
-server.connection({
-  port: 3000
-});
+server.connection({ port: config.port });
 
 // Set view engine and folder
 server.views({
-  engines: {
-      html: require('handlebars')
-  },
+  engines: { html: require('handlebars') },
   path: './views',
   layoutPath: './views/layout',
   layout: 'default',
@@ -45,6 +43,7 @@ server.register([
 });
 
 server.route(assetRoutes);
+server.route(apiRoutes);
 server.route(indexRoutes);
 
 module.exports = server;

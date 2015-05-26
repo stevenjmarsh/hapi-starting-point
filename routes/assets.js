@@ -4,30 +4,18 @@
 module.exports = [{
   method: 'GET',
   path: '/public/images/{glob*}',
-  handler: {
-      directory: { path: './public/images' }
-  },
-  config: {
-    id: 'images'
-  }
+  handler: { directory: { path: './public/images' } },
+  config: { id: 'images' }
 }, {
   method: 'GET',
   path: '/public/css/{glob*}',
-  handler: {
-    directory: { path: './public/css' }
-  },
-  config: {
-    id: 'css'
-  }
+  handler: { directory: { path: './public/css' } },
+  config: { id: 'css' }
 }, {
   method: 'GET',
   path: '/public/js/{glob*}',
-  handler: {
-    directory: { path: './public/js' }
-  },
-  config: {
-    id: 'js'
-  }
+  handler: { directory: { path: './public/js' } },
+  config: { id: 'js' }
 }, {
   method: 'GET',
   path: '/favicon.ico',

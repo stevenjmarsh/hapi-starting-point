@@ -7,20 +7,26 @@ var gulp = require('gulp'),
 
 var paths = {
   jsLintFiles: [
+    './config/**/*.js',
     './controllers/**/*.js',
     './knexfile.js',
+    './models/**/*.js',
     './public/**/*.js',
     './routes/**/*.js',
     './server.js',
-    './test/**/*.js'
+    './test/**/*.js',
+    './utils/**/*.js'
   ],
   allTestSource: [
+    './config/**/*.js',
     './controllers/**/*.js',
+    './models/**/*.js',
     './public/**/*.js',
     './public/**/*.css',
     './routes/**/*.js',
     './server.js',
     './test/**/*.js',
+    './utils/**/*.js',
     './views/**/*.html'
   ]
 };
