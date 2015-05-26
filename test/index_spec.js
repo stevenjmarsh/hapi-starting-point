@@ -65,20 +65,6 @@ describe('Server base routes', function () {
       });
     });
 
-    it('successfully gets asset images', function(done) {
-      var options = {
-        method: 'GET',
-        url: '/public/images/projects.png'
-      };
-
-      server.inject(options, function(siResponse) {
-        expect(siResponse.statusCode).to.satisfy(function (num) {
-          return num === 200 || num === 304;
-        });
-        done();
-      });
-    });
-
     it('successfully gets logo image', function(done) {
       var options = {
         method: 'GET',
