@@ -6,8 +6,9 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon');
 
 var paths = {
-  jsSource: [
+  jsLintFiles: [
     './controllers/**/*.js',
+    './knexfile.js',
     './public/**/*.js',
     './routes/**/*.js',
     './server.js',
@@ -29,13 +30,13 @@ gulp.task('clear', function () {
 });
 
 gulp.task('lint', function () {
-  return gulp.src(paths.jsSource)
+  return gulp.src(paths.jsLintFiles)
     .pipe(jshint({ node: true }))
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('lintw', ['clear'], function() {
-  return gulp.watch(paths.jsSource, ['clear', 'lint']);
+  return gulp.watch(paths.jsLintFiles, ['clear', 'lint']);
 });
 
 gulp.task('test', function () {

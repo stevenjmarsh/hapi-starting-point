@@ -3,6 +3,9 @@
 *.jpg
 *.ico
 
+# Database files
+*.sqlite3
+
 # Logs
 logs
 *.log

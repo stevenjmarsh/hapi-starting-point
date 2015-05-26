@@ -2,6 +2,7 @@
 * config (port)
 * assets (main.css)
 * localization (International)
+* add author info to references
 
 # hapi-boilerplate
 A hapi boilerplate created from scratch, based on several popular existing boilerplates, for the purpose of learning structure and hapi fundamentals.
@@ -13,11 +14,14 @@ Folder structure, practices & style, and functionality were borrowed from each.
 
 Instead of forking and copying much of the source, this project was assembled from scratch to gain understanding of each piece individually, as well as what components are fundamental to common robust web servers.
 
-### Node boilerplates referenced
+### Boilerplates / Tutorials referenced
 * hapi-ninja
 * fs-accounts
 * aqua
 * mullet
+* hapi ember bookshelp tutorial
+    - Author: Kirt Henrie
+    - URL: http://blog.optimalcadence.com/building-an-application-with-ember-cli-hapi-bookshelf-knex-js-sqlite3-part-1/
 * Start Bootstrap - Modern Business HTML Template
 
 ## Usage
@@ -32,8 +36,22 @@ Instead of forking and copying much of the source, this project was assembled fr
         + in the nav menu, the corresponding menu item must have the data-menu value set 
             * ```<li data-menu='homepage'>...```
 * Images (a logo, favicon, and sample graphic) are used/referenced in the source code, but not stored in the repository. Tests will fail, reminding you to provide those images or update those image names.
+### Database setup
+* Steps derived from http://knexjs.org/#Migrations-CLI
+* knex init
+    - creates a default knexfile.js
+    - then add lines from corresponding project file 
+    - NOTE: to be safe, make sure the directory referenced in the knexfile.js file is created (I don't recall for sure, but I think one of the following steps failed without creating the directory first [in this case, the folder is './db'])
+* knex migrate:make contacts
+    - creates a TIMESTAMP_contacts.js file
+    - then add lines from corresponding project file 
+* knex migrate:latest
+* knex seed:make contacts 
+    - creates a seeds directory and contact.js seed file
+    - then add lines from corresponding project file 
+* knex seed:run
 
-### Tasks using Gulp
+### Gulp Tasks
 * clear - clears the console (typically used before any of the 'watch' based tasks are rerun)
 * lint - runs jslint once against indicated source files
 * lintw - sets a watch to run lint when any of the source files changes
