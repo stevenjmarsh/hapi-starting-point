@@ -32,7 +32,7 @@ describe('Server base routes', function () {
       server.inject(options, function(siResponse) {
         expect(siResponse.statusCode).to.equal(200);
         expect(siResponse.headers['content-type']).to.equal('text/html');
-        expect(siResponse.payload).to.contain('<title>Hapi-Handlebars</title>');
+        expect(siResponse.payload).to.contain('<title>Hapi StartingPoint</title>');
         done();
       });
     });
