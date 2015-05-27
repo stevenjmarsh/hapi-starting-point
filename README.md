@@ -2,17 +2,19 @@
 * Boom
 * Lout
 * coding style review
+* update / restructure readme
+* Review 
+    - https://medium.com/the-spumko-suite/creating-validation-schemas-with-joi-eb4ff19f6688
+    - https://medium.com/the-spumko-suite/testing-hapi-services-with-lab-96ac463c490a  (better test coverage?)
 
 # hapi-starting-point
-This project is a simple node application, created to gain experience with hapi, and to be used as a starting point (not quite a boilerplate) for node hapi applications.   and address some basic needs of simple projects
+This project is a simple node application, created to gain experience with hapi, and to be used as a starting point or reference creating for node hapi applications.
 
-The application contains a light UI and api, with database connectivity. A variety of supporting packages were used.
+The application addresses some basic needs of simple projects. It contains a light sample UI, API, and database connectivity, along with a collection of useful supporting packages.
 
-A hapi boilerplate created from scratch, based on several popular existing boilerplates, for the purpose of learning project structure and hapi fundamentals.
+A hapi boilerplate  from scratch, based on several popular existing boilerplates,
 
-This project was built referencing the following other boilerplates and tutorials: hapi-ninja (by poetic-ninja), aqua (by jedireza), nodejs-account-boilerplate (by fs-opensource), and mullet (by lynnaloo).
-
-Folder structure, practices & style, and functionality were borrowed from each.
+the purpose of learning project structure and hapi fundamentals. Folder structure, practices & style, and functionality were borrowed from each.
 
 Instead of forking and copying much of the source, this project was assembled from scratch to gain understanding of each piece individually, as well as what components and practices are fundamental to robust web servers.
 
