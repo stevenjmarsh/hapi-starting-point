@@ -1,33 +1,37 @@
 # ToDo
 * Boom
 * Lout
-* coding style review
+* refactor specs (split files, share bdd vars)
+* coding style review (consistency)
 * update / restructure readme
+* add install section 
 * Review 
     - https://medium.com/the-spumko-suite/creating-validation-schemas-with-joi-eb4ff19f6688
     - https://medium.com/the-spumko-suite/testing-hapi-services-with-lab-96ac463c490a  (better test coverage?)
 
 # hapi-starting-point
-This project is a simple node application, created to gain experience with hapi, and to be used as a starting point or reference creating for node hapi applications.
+This project is a simple node application, created to gain experience with hapi, and to be used as a starting point or reference for creating node hapi applications.
 
-The application addresses some basic needs of simple projects. It contains a light sample UI, API, and database connectivity, along with a collection of useful supporting packages.
+The application addresses some basic needs of simple projects. It contains a light sample UI, API, and database connectivity, along with a collection of useful supporting packages. [features/packages listed below]
 
-A hapi boilerplate  from scratch, based on several popular existing boilerplates,
+The application is based on several popular existing boilerplates, and various tutorials. [references listed below]
 
-the purpose of learning project structure and hapi fundamentals. Folder structure, practices & style, and functionality were borrowed from each.
+Borrowed from each (and personal learning goals) were: hapi fundamentals, project folder structure, best practices & style, and components & functionality of basic robust web servers.
 
-Instead of forking and copying much of the source, this project was assembled from scratch to gain understanding of each piece individually, as well as what components and practices are fundamental to robust web servers.
+Instead of forking or copy/pasting any of the source, this project was coded (along) from scratch to gain understanding of each piece individually.
 
-### References
+## References
 Most reference material was found simply through online search. Hapi, however, also provides a list of boilerplates (http://hapijs.com/plugins#Boilerplate).
 
-#### Articles / Tutorials
+### Articles / Tutorials
 * The Pursuit of Hapi-ness: An Introduction to Hapi 3.0
     - Author: Fionn Kelleher
     - URL: https://medium.com/@_expr/the-pursuit-of-hapi-ness-d82777afaa4b
-* Testing Hapi Services with Lab 
+    - Note, even though older version of hapi, still helpful
+* Testing Hapi Services with Lab
     - Author: Fionn Kelleher
     - URL: https://medium.com/the-spumko-suite/testing-hapi-services-with-lab-96ac463c490a
+    - Note, even though older version of hapi, still helpful
 * Creating Validation Schemas with Joi
     - Author: Fionn Kelleher
     - URL: https://medium.com/the-spumko-suite/creating-validation-schemas-with-joi-eb4ff19f6688
@@ -38,7 +42,7 @@ Most reference material was found simply through online search. Hapi, however, a
     - Author: Kirt Henrie
     - URL: http://blog.optimalcadence.com/building-an-application-with-ember-cli-hapi-bookshelf-knex-js-sqlite3-part-1/
     - KEY TAKE-AWAY: tutorial starts with very simple hapi server, then refactors to structure project similar to hapi-ninja (was very helpful in understanding project structure)
-#### Boilerplates
+### Boilerplates
 * aqua
     - Author: jedireza (Reza Akhavan)
     - URL: https://github.com/jedireza/aqua
@@ -51,10 +55,11 @@ Most reference material was found simply through online search. Hapi, however, a
 * mullet
     - Author: lynnaloo (Linda Nichols)
     - URL: https://github.com/lynnaloo/mullet
-#### Online Resources
+### Online Resources
 * Modern Business (UI: bootstrap, html templates)
     - Author: Start Bootstrap / Iron Summit Media Strategies
     - URL: http://startbootstrap.com/template-overviews/modern-business/
+* NPM package pages (hapi, boom, lout, knex, bookshelf, gulp, joi, good, good-console, lab, chai, hapi-named-routes)
 
 
 ### Features / Practices 
@@ -63,23 +68,23 @@ Here is a list of technologies, packages, features, and best practices I wanted 
     - Handlebars, partials
     - Bootstrap / Modern Business (html templates)
     - Navbar
-    - hapi-named-routes
+    - __hapi-named-routes__
 * API 
 * ORM / DB 
-    - Bookshelf
-    - Knex 
+    - __Bookshelf__
+    - __Knex__ (note, sqlite3 was used here for setup simplicity, but MySQL, MariaDB, Postgres, and Oracle are also supported)
 * Validation
-    - Joi
+    - __Joi__
 * Logging
-    - good, good-console
+    - __Good__, __Good Console__
 * HTTP error response
-    - Boom
+    - __Boom__
 * Endpoint documentation
-    - Lout
+    - __Lout__
 * Test
-    - Lab, Chai 
+    - __Lab__, __Chai__ 
 * Tasks 
-    - Gulp 
+    - __Gulp__ 
 * Coding Standards / Conventions
     - Work in progress. Still junior to writing javascript, and settling in on convention and style, but feel is a very important aspect.
     - Example: http://hapijs.com/styleguide
