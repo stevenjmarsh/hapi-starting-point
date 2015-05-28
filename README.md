@@ -1,5 +1,5 @@
 # ToDo
-* Boom
+* __done.__ Boom
 * __done.__ Lout
 * refactor specs (split up index_spec in to multiple files, & DRY up bdd vars)
 * coding style review (consistency)
@@ -132,6 +132,7 @@ Here is a list of packages, features, and best practices I wanted to gain experi
             * ```<div data-menu='homepage' id=...```
         + in the nav menu, the corresponding menu item must have the data-menu value set 
             * ```<li data-menu='homepage'>...```
+* __NOTE:__ examples of using boom for api restful errors are in the api controller. But developer should add more and/or finer grained error type testing based on the needs of the application
 * Images (a logo, favicon, and sample graphic) are used/referenced in the source code, but not stored in the repository. Tests will fail, reminding you to provide those images or update image names to those being used.
 * API documentation
     - lout is used to generate api route documentation

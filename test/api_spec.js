@@ -99,6 +99,21 @@ describe('Contacts API', function() {
       });
     });
 
+    it('404 error when requesting nonexistent contact', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/api/contacts/17'
+      };
+
+      server.inject(options, function (response) {
+        var result = response.result;
+
+        expect(response.statusCode).to.equal(404);
+
+        done();
+      });
+    });
+
     it('creates a contact, response is created record object', function (done) {
       var options = {
         method: 'POST',
@@ -203,7 +218,20 @@ describe('Contacts API', function() {
       });
     });
 
-    it('delete contact response is empty', function (done) {
+    it('delete nonexisting contact returns 404', function (done) {
+      var options = {
+        method: 'DELETE',
+        url: '/api/contacts/89'
+      };
+
+      server.inject(options, function (response) {
+        expect(response.statusCode).to.equal(404);
+
+        done();
+      });
+    });
+
+    it('successful delete contact response is empty', function (done) {
       var options = {
         method: 'DELETE',
         url: '/api/contacts/' + localContact.contact.id,

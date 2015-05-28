@@ -1,5 +1,7 @@
 var models = require('../models/contacts'),
-  utils = require('../utils/utils');
+  utils = require('../utils/utils'),
+  Boom = require('boom');
+
 
 module.exports = {
   contacts: function (request, reply) {
@@ -9,8 +11,15 @@ module.exports = {
   },
 
   contact: function (request, reply) {
-    new models.Contact({id: request.params.id}).fetch().then(function(contact) {
+    new models.Contact({id: request.params.id})
+    .fetch({require: true})
+    .then(function(contact) {
       reply(utils.formatJson('contact', contact));
+    })
+    .catch(function (err) {
+      // most common error thrown in this case is not found
+      // NOTE, add finer grained testing based on needs of application.
+      reply(Boom.notFound("Contact not found."));
     });
   },
 
@@ -30,8 +39,13 @@ module.exports = {
   },
 
   contactDelete: function (request, reply) {
-    new models.Contact(request.params).destroy().then(function (contact) {
+    new models.Contact(request.params)
+    .destroy({require: true})
+    .then(function (contact) {
       reply(JSON.stringify(contact));
+    })
+    .catch(function(err) {
+      reply(Boom.notFound("Contact not found."));
     });
   }
 };
