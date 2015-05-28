@@ -1,12 +1,15 @@
 # ToDo
 * __done.__ Boom
 * __done.__ Lout
-* refactor specs (split up index_spec in to multiple files, & DRY up bdd vars)
+* refactor tests (spec files)
+    - split up index_spec in to multiple smaller files
+    - DRY up bdd vars
 * coding style review (consistency)
 * __done.__ update / restructure readme
 * __done.__ add .gitkeep to needed folders
 * add install section
     - update / remove database section 
+* Test Coverage to 100%
 * Review 
     - https://medium.com/the-spumko-suite/creating-validation-schemas-with-joi-eb4ff19f6688
     - https://medium.com/the-spumko-suite/testing-hapi-services-with-lab-96ac463c490a  (better test coverage?)
@@ -159,6 +162,13 @@ Here is a list of packages, features, and best practices I wanted to gain experi
         + use of data-toggle and data-target on the dropdown menu  
     - I ended up reviewing the bootstrap docs in detail, and finding a helpful video on YouTube by Ben Bigras (https://www.youtube.com/watch?v=lx0IysyYLH0), to help add additional functionality (hover over dropdown displays dropdown, navbar link as 'active' based on which page is being shown)
         + NOTE: I did refactor the code for adding the 'active' class, and instead of using javascript used CSS to implement hover/dropdown
+* Testing coverage, not 100%
+    - still working on tryign to get 100% coverage 
+    - there are a few simple cases where it is difficult or much more effort or more complicated code, than the risk of the code being incorrect or failing (still trying though)
+    - in one case, the coverage utility reported two lines in settings.js not being covered
+        + spend a lot of time writing tests to cover those lines (most effort around preserving and manipulating process.env vars, and reloading require modules)
+        + after tests were complete, coverage util still reporting those lines not tested. :( 
+        + did learn more about adding/removing process.env vars, and how to reload modules though.
 
 #### Micro blog (perspective, thoughts, self critique...)
 Some notes I took, thoughts I captured while coding...

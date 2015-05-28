@@ -1,5 +1,6 @@
 'use strict';
 
+// necessary to set NODE_ENV when using test database
 process.env.NODE_ENV = 'test';
 
 var expect = require('chai').expect,
@@ -271,6 +272,7 @@ describe('Contacts API', function() {
   });
 
   describe('Validation', function() {
+
     it('fails creating a contact with first_name length < min', function (done) {
       localContact.contact.first_name = 'J';
 
