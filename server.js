@@ -33,9 +33,8 @@ server.register([
       }]
     }
   },
-  {
-    register: require('hapi-named-routes')
-  }
+  { register: require('lout') },
+  { register: require('hapi-named-routes') }
 ], function (err) {
   if (err) {
     console.log('Failed loading plugin:', err);

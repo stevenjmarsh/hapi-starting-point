@@ -3,9 +3,10 @@
 * Lout
 * refactor specs (split files, share bdd vars)
 * coding style review (consistency)
-* update / restructure readme
-* add .gitkeep to needed folders
-* add install section 
+* __done.__ update / restructure readme
+* __done.__ add .gitkeep to needed folders
+* add install section
+    - update / remove database section 
 * Review 
     - https://medium.com/the-spumko-suite/creating-validation-schemas-with-joi-eb4ff19f6688
     - https://medium.com/the-spumko-suite/testing-hapi-services-with-lab-96ac463c490a  (better test coverage?)
@@ -21,6 +22,7 @@ Borrowed from each (and personal learning goals) were: hapi fundamentals, projec
 
 Instead of forking or copy/pasting any of the source, this project was coded (along) from scratch to gain understanding of each piece individually.
 
+Any feedback welcome.
 <br>
 ## References
 Most reference material was found simply through online search. Hapi, however, also provides a list of boilerplates (http://hapijs.com/plugins#Boilerplate).
@@ -57,7 +59,7 @@ Most reference material was found simply through online search. Hapi, however, a
 
 <br>
 ## Features / Practices 
-Here is a list of technologies, packages, features, and best practices I wanted to gain experience with (as well as provide in the project for reuse):
+Here is a list of packages, features, and best practices I wanted to gain experience with (as well as provide in the project for reuse):
 
 * UI (serving from hapi)
     - Handlebars, partials
@@ -93,7 +95,7 @@ Here is a list of technologies, packages, features, and best practices I wanted 
 <br>
 ## Usage 
 
-### Database setup
+#### Database setup
 * Steps derived from http://knexjs.org/#Migrations-CLI
 * knex init
     - creates a default knexfile.js
@@ -108,7 +110,7 @@ Here is a list of technologies, packages, features, and best practices I wanted 
     - then add lines from corresponding project file 
 * knex seed:run
 
-### Gulp Tasks
+#### Gulp Tasks
 * clear - clears the console (typically used before any of the 'watch' based tasks are rerun)
 * lint - runs jslint once against indicated source files
 * lintw - sets a watch to run lint when any of the source files changes
@@ -116,12 +118,12 @@ Here is a list of technologies, packages, features, and best practices I wanted 
 * testw - sets a watch to run lab test any time indicated source files change
 * nodemon - runs the server, and restarts any time source files change 
 
-### Application Notes 
+#### Application Notes 
 * Environment Variables
     - PORT - server port number, defaults to 3000
     - NODE_ENV - development, test, staging, production (defaults to development)
 * Navbar - active menu item setup
-    - To have the page set the menu item to active, based on which page is being viewed (home, about, ...), html element attributes need to be set associating the current page being shown (a partial, div) to the corresponding menu item (li a), using a data-menu attribute
+    - To have the current page (home, about, ...) set the menu item to active, html element attributes need to be set associating the current page being shown (a partial, div) to the corresponding menu item (li a), using a data-menu attribute
         + for more background on this, see micro blog entry (Navbar - active menu item)
     - CSS Settings
         + in partial of current page being shown, div id must be 'current-page'
@@ -131,11 +133,19 @@ Here is a list of technologies, packages, features, and best practices I wanted 
         + in the nav menu, the corresponding menu item must have the data-menu value set 
             * ```<li data-menu='homepage'>...```
 * Images (a logo, favicon, and sample graphic) are used/referenced in the source code, but not stored in the repository. Tests will fail, reminding you to provide those images or update image names to those being used.
+* API documentation
+    - lout is used to generate api route documentation
+        + web page routes are explicitly excluded
+    - documentation is at http://_host-port_/docs
+    - tests are written to verify lout plugin successfully registered
+        + makes sure at least one api doc route exists
+        + makes sure at least one web page route is excluded
+        + copy create more of these tests as you wish
 
 <br>
 ## Dev Journal
 
-### Tech Notes
+#### Tech Notes
 * npm start & directory structure
     - I opted with creating an executeable bin/www, matching a technique I've seen used with some express examples (and pointed out by a Code School instructor, a practice used by developers at NodeJS)
     - One reason I liked this, is because it keeps the definition of the server in one file (server.js), and the launching/starting of the server in another. Seemed like a sensible separation of concerns.
@@ -149,8 +159,8 @@ Here is a list of technologies, packages, features, and best practices I wanted 
     - I ended up reviewing the bootstrap docs in detail, and finding a helpful video on YouTube by Ben Bigras (https://www.youtube.com/watch?v=lx0IysyYLH0), to help add additional functionality (hover over dropdown displays dropdown, navbar link as 'active' based on which page is being shown)
         + NOTE: I did refactor the code for adding the 'active' class, and instead of using javascript used CSS to implement hover/dropdown
 
-### Micro blog (perspective, thoughts, self critique...)
-Notes I took, thoughts I captured while coding...
+#### Micro blog (perspective, thoughts, self critique...)
+Some notes I took, thoughts I captured while coding...
 
 * coding style, like to think I kept it neat, but know I need to be more consistent. I do strongly believe neat/readable code is extremely important. And willing to follow any agreed upon coding style/convention
 * Definitely overthought some areas, being concerned with following best practices
@@ -164,4 +174,3 @@ Notes I took, thoughts I captured while coding...
     - I definitely spent too much time on this, and overthought it. But will chalk that up to practice (and trying to learn best practices)
     - on a performance note, I was a little concerned about using a data attribute as a selector, so narrowed the selection first reasonably (by first selecting menu list items from the nav bar
     - some fear exists of trying to be too clever
-* 
