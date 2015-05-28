@@ -1,7 +1,7 @@
 # ToDo
 * Boom
-* Lout
-* refactor specs (split files, share bdd vars)
+* __done.__ Lout
+* refactor specs (split up index_spec in to multiple files, & DRY up bdd vars)
 * coding style review (consistency)
 * __done.__ update / restructure readme
 * __done.__ add .gitkeep to needed folders
