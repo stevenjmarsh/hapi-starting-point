@@ -2,7 +2,8 @@
 
 var expect = require('chai').expect,
   Lab = require('lab'),
-  server = require('../server');
+  server = require('../server'),
+  config = require('../config/settings');
 
 var lab = exports.lab = Lab.script();
 
@@ -32,66 +33,11 @@ describe('Server base routes', function () {
       server.inject(options, function(siResponse) {
         expect(siResponse.statusCode).to.equal(200);
         expect(siResponse.headers['content-type']).to.equal('text/html');
-        expect(siResponse.payload).to.contain('<title>Hapi StartingPoint</title>');
+        expect(siResponse.payload).to.contain('<title>' + config.appTitle + '</title>');
         done();
       });
     });
 
-    it('successfully gets our locally served main.css', function (done) {
-      var options = {
-        method: 'GET',
-        url: '/public/css/main.css'
-      };
-
-      server.inject(options, function(siResponse) {
-        expect(siResponse.statusCode).to.satisfy(function (num) {
-          return num === 200 || num === 304;
-        });
-        done();
-      });
-    });
-
-    it('successfully gets our locally served hbp_navbar.js', function (done) {
-      var options = {
-        method: 'GET',
-        url: '/public/js/hbp_navbar.js'
-      };
-
-      server.inject(options, function(siResponse) {
-        expect(siResponse.statusCode).to.satisfy(function (num) {
-          return num === 200 || num === 304;
-        });
-        done();
-      });
-    });
-
-    it('successfully gets logo image', function(done) {
-      var options = {
-        method: 'GET',
-        url: '/public/images/mountain_logo.png'
-      };
-
-      server.inject(options, function(siResponse) {
-        expect(siResponse.statusCode).to.satisfy(function (num) {
-          return num === 200 || num === 304;
-        });
-        done();
-      });
-    });
-
-    it('successfully serves favicon.ico', function(done) {
-      var options = {
-        method: 'GET',
-        url: '/favicon.ico'
-      };
-
-      server.inject(options, function(siResponse) {
-        expect(siResponse.statusCode).to.satisfy(function (num) {
-          return num === 200 || num === 304;
-        });
-        done();
-      });
-    });
   });
 
   describe('Navbar', function() {

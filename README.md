@@ -3,7 +3,7 @@
 * __done.__ Lout
 * refactor tests (spec files)
     - split up index_spec in to multiple smaller files
-    - DRY up bdd vars
+    - DRY up bdd vars (declarations repeated in each file)
 * coding style review (consistency)
 * __done.__ update / restructure readme
 * __done.__ add .gitkeep to needed folders
@@ -97,21 +97,37 @@ Here is a list of packages, features, and best practices I wanted to gain experi
 
 <br>
 ## Usage 
+### Installation 
+#### Prerequisites
+Make sure the following are installed prior to starting the install steps:
 
-#### Database setup
-* Steps derived from http://knexjs.org/#Migrations-CLI
-* knex init
-    - creates a default knexfile.js
-    - then add lines from corresponding project file 
-    - NOTE: to be safe, make sure the directory referenced in the knexfile.js file is created (I don't recall for sure, but I think one of the following steps failed without creating the directory first [in this case, the folder is './db'])
-* knex migrate:make contacts
-    - creates a TIMESTAMP_contacts.js file
-    - then add lines from corresponding project file 
-* knex migrate:latest
-* knex seed:make contacts 
-    - creates a seeds directory and contact.js seed file
-    - then add lines from corresponding project file 
-* knex seed:run
+Applications Installed: node, npm, git
+NPM Global Packages:    knex, lab
+
+    (note: lab may not be required as a global install, but useful for running tests from the command line)
+
+#### Database set up
+* Several database setup (knex) steps have already been run:
+    - knex init (generates knex configuration file, knexfile.js)
+    - knex migrate:make (creates database/table schema creation file)
+    - knex seed:make (generates a seed data source file)
+* The files generated from those steps were updated with project settings, a sample schema, and seed data, and have been stored in the repository.
+* Those steps do not need to be run prior to installation. For more information on that process, see the [knex documentation](http://knexjs.org/#Migrations-CLI).
+
+prior to running the knex migrate and seed steps, you can modify the schema and seed files, to adjust those as you like. If changes are made, you will need to update the api_spec.js test as well to have the tests reflect those changes as well.
+
+#### Install Steps 
+1. git clone https://github.com/stevenjmarsh/hapi-starting-point.git
+2. npm install          (installs all necessary local project npm packages)
+3. knex migrate:latest  (generates database/table)
+4. knex seed:run        (populates dev database with data)
+5. add images           (add two images files to public/images: mountain_logo.png, mountain_favicon.ico -of course any images can be used here, but if using different filenames, you will need to update navbar.html, assets.js, )
+
+#### Running
+gulp lint
+gulp test
+npm start  (which simply runs ./bin/www)
+debug (node-inspector): ./bin/wwwd
 
 #### Gulp Tasks
 * clear - clears the console (typically used before any of the 'watch' based tasks are rerun)
@@ -160,10 +176,10 @@ Here is a list of packages, features, and best practices I wanted to gain experi
     - I initially wrote the navbar functionality after viewing the Code School Bootstrap online course
     - That version was missing some desired functionality (and also strayed a little from Bootstrap practices and documentation)
         + use of data-toggle and data-target on the dropdown menu  
-    - I ended up reviewing the bootstrap docs in detail, and finding a helpful video on YouTube by Ben Bigras (https://www.youtube.com/watch?v=lx0IysyYLH0), to help add additional functionality (hover over dropdown displays dropdown, navbar link as 'active' based on which page is being shown)
+    - I ended up reviewing the bootstrap docs in detail, and finding a helpful [video on YouTube by Ben Bigras](https://www.youtube.com/watch?v=lx0IysyYLH0), to help add additional functionality (hover over dropdown displays dropdown, navbar link as 'active' based on which page is being shown)
         + NOTE: I did refactor the code for adding the 'active' class, and instead of using javascript used CSS to implement hover/dropdown
 * Testing coverage, not 100%
-    - still working on tryign to get 100% coverage 
+    - still working on trying to get 100% coverage 
     - there are a few simple cases where it is difficult or much more effort or more complicated code, than the risk of the code being incorrect or failing (still trying though)
     - in one case, the coverage utility reported two lines in settings.js not being covered
         + spend a lot of time writing tests to cover those lines (most effort around preserving and manipulating process.env vars, and reloading require modules)

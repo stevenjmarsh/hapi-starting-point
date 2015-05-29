@@ -13,8 +13,13 @@ var server = new Hapi.Server();
 server.connection({ port: config.port });
 
 // Set view engine and folder
+var defaultContext = {
+  title: config.appTitle
+};
+
 server.views({
   engines: { html: require('handlebars') },
+  context: defaultContext,
   path: './views',
   layoutPath: './views/layout',
   layout: 'default',

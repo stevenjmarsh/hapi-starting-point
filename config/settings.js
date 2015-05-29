@@ -6,6 +6,8 @@ var path = require('path');
 module.exports = {
   rootPath: path.normalize(__dirname + '/..'),
 
+  appTitle: 'HapiStartingPoint',
+
   // If we specify a PORT env var use it, else use 3000
   port: parseInt(process.env.PORT, 10) || 3000,
 
