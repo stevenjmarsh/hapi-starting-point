@@ -2,7 +2,7 @@
 * __done.__ Boom
 * __done.__ Lout
 * refactor tests (spec files)
-    - split up index_spec in to multiple smaller files
+    - __done.__ split up index_spec in to multiple smaller files
     - DRY up bdd vars (declarations repeated in each file)
 * coding style review (consistency)
 * __done.__ update / restructure readme
@@ -104,24 +104,24 @@ Make sure the following are installed prior to starting the install steps:
 Applications Installed: node, npm, git
 NPM Global Packages:    knex, lab
 
-    (note: lab may not be required as a global install, but useful for running tests from the command line)
+```NOTE: lab may not be required as a global install, but can be useful for running tests on the fly from the command line```
 
 #### Database set up
 * Several database setup (knex) steps have already been run:
     - knex init (generates knex configuration file, knexfile.js)
-    - knex migrate:make (creates database/table schema creation file)
+    - knex migrate:make (creates database/table schema source file)
     - knex seed:make (generates a seed data source file)
-* The files generated from those steps were updated with project settings, a sample schema, and seed data, and have been stored in the repository.
+* The files generated from those steps were updated with directory settings, sample schema, and seed data, and have been stored in the repository.
 * Those steps do not need to be run prior to installation. For more information on that process, see the [knex documentation](http://knexjs.org/#Migrations-CLI).
 
-prior to running the knex migrate and seed steps, you can modify the schema and seed files, to adjust those as you like. If changes are made, you will need to update the api_spec.js test as well to have the tests reflect those changes as well.
+```NOTE: prior to running the knex migrate and seed steps, you can modify the schema and seed files, to adjust those as you like. If changes are made, you will need to update the api_spec.js test as well to have the tests reflect any changes made.```
 
 #### Install Steps 
 1. git clone https://github.com/stevenjmarsh/hapi-starting-point.git
 2. npm install          (installs all necessary local project npm packages)
 3. knex migrate:latest  (generates database/table)
-4. knex seed:run        (populates dev database with data)
-5. add images           (add two images files to public/images: mountain_logo.png, mountain_favicon.ico -of course any images can be used here, but if using different filenames, you will need to update navbar.html, assets.js, )
+4. knex seed:run        (populates dev database/table)
+5. add images           (add two image files to public/images: mountain_logo.png, mountain_favicon.ico -of course any images can be used here, but if using different filenames, you will need to search and replace the filenames in the source and tests)
 
 #### Running
 gulp lint

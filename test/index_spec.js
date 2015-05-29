@@ -20,7 +20,7 @@ var describe = lab.describe,
 /**
 * Tests...
 */
-describe('Server base routes', function () {
+describe('Server base routes, main pages', function () {
 
   describe('Default Layout and Partials', function() {
 
@@ -56,8 +56,8 @@ describe('Server base routes', function () {
         done();
       });
     });
-  });
 
+  });
 
   describe('Missing pages, bad routes', function() {
 
@@ -88,6 +88,7 @@ describe('Server base routes', function () {
         done();
       });
     });
+
   });
 
   describe('Home page', function() {
