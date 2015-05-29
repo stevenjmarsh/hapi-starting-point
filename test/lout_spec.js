@@ -1,8 +1,5 @@
 'use strict';
 
-// necessary to set NODE_ENV when using test database
-process.env.NODE_ENV = 'test';
-
 var expect = require('chai').expect,
   Lab = require('lab'),
   server = require('../server');
