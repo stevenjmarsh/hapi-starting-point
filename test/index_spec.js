@@ -38,9 +38,21 @@ describe('Server base routes, main pages', function () {
       });
     });
 
-  });
+    it('footer contains title', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/'
+      };
 
-  describe('Navbar', function() {
+      server.inject(options, function(siResponse) {
+        expect(siResponse.statusCode).to.equal(200);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.contain("<div class='footer band footer-format'>");
+        expect(siResponse.payload).to.contain('<p>' + config.appTitle + ' &copy; 2015.</p>');
+        done();
+      });
+
+    });
 
     it('displays the nav bar partial successfully', function(done) {
       var options = {
