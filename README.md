@@ -7,8 +7,8 @@
 * coding style review (consistency)
 * __done.__ update / restructure readme
 * __done.__ add .gitkeep to needed folders
-* add install section
-    - update / remove database section 
+* __done.__ add install section
+    - __done.__ update / remove database section 
 * Test Coverage to 100%
 * Review 
     - https://medium.com/the-spumko-suite/creating-validation-schemas-with-joi-eb4ff19f6688
