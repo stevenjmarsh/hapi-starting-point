@@ -10,6 +10,11 @@ module.exports = [{
   config: { id: 'index', plugins: { lout: false } }
 }, {
   method: 'GET',
+  path: '/list',
+  handler: indexControllers.list,
+  config: { id: 'list', plugins: { lout: false } }
+}, {
+  method: 'GET',
   path: '/about',
   handler: indexControllers.about,
   config: { id: 'about', plugins: { lout: false } }

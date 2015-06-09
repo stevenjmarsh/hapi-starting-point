@@ -2,11 +2,15 @@
 
 module.exports = {
   index: function (request, reply) {
-      reply.view('index');
+    reply.view('index');
+  },
+
+  list: function (request, reply) {
+    reply.view('list');
   },
 
   about: function (request, reply) {
-      reply.view('about');
+    reply.view('about');
   },
 
   contact: function (request, reply) {
