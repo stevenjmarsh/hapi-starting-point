@@ -4,6 +4,7 @@
 * refactor tests (spec files)
     - __done.__ split up index_spec in to multiple smaller files
     - DRY up bdd vars (declarations repeated in each file)
+    - DRY up extraneous calls to server (server.inject), call once test response for several conditions [especially in index_spec.js]
 * coding style review (consistency)
 * __done.__ update / restructure readme
 * __done.__ add .gitkeep to needed folders
