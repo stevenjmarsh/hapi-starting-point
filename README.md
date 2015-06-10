@@ -1,20 +1,3 @@
-# ToDo
-* __done.__ Boom
-* __done.__ Lout
-* refactor tests (spec files)
-    - __done.__ split up index_spec in to multiple smaller files
-    - DRY up bdd vars (declarations repeated in each file)
-    - DRY up extraneous calls to server (server.inject), call once test response for several conditions [especially in index_spec.js]
-* coding style review (consistency)
-* __done.__ update / restructure readme
-* __done.__ add .gitkeep to needed folders
-* __done.__ add install section
-    - __done.__ update / remove database section 
-* Test Coverage to 100%
-* Review 
-    - https://medium.com/the-spumko-suite/creating-validation-schemas-with-joi-eb4ff19f6688
-    - https://medium.com/the-spumko-suite/testing-hapi-services-with-lab-96ac463c490a  (better test coverage?)
-
 # hapi-starting-point
 This project is a simple node application, created as practice to gain experience with hapi, and to be used as a reference or starting point for creating simple node hapi projects.
 
@@ -215,3 +198,10 @@ Application/Technical notes and perspectives/thoughts captured while coding...
     - I definitely spent too much time on this, and overthought it. But will chalk that up to practice (and trying to learn best practices)
     - on a performance note, I was a little concerned about using a data attribute as a selector, so narrowed the selection first reasonably (by first selecting menu list items from the nav bar
     - some fear exists of trying to be too clever
+
+# ToDo
+* refactor tests (spec files)
+    - DRY up bdd vars (declarations repeated in each file)
+    - DRY up extraneous calls to server (server.inject), call once test response for several conditions [especially in index_spec.js]
+* coding style review (consistency)
+* Test Coverage to 100%
