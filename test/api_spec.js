@@ -24,20 +24,6 @@ var describe = lab.describe,
 /**
 * Tests...
 */
-before(function (done) {
-  bookshelf.knex.migrate.latest().then(function () {
-    bookshelf.knex.seed.run().then(function () {
-      done();
-    });
-  });
-});
-
-after(function (done) {
-  bookshelf.knex('contacts').truncate().then(function () {
-    done();
-  });
-});
-
 describe('Contacts API', function() {
 
   var localContact = {
@@ -54,6 +40,20 @@ describe('Contacts API', function() {
       zip_code: '11223',
     }
   };
+
+  before(function (done) {
+    bookshelf.knex.migrate.latest().then(function () {
+      bookshelf.knex.seed.run().then(function () {
+        done();
+      });
+    });
+  });
+
+  after(function (done) {
+    bookshelf.knex('contacts').truncate().then(function () {
+      done();
+    });
+  });
 
   describe('CRUD', function() {
 

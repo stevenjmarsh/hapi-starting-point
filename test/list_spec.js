@@ -23,23 +23,44 @@ var describe = lab.describe,
 /**
 * Tests...
 */
-before(function (done) {
-  bookshelf.knex.migrate.latest().then(function () {
-    bookshelf.knex.seed.run().then(function () {
-      done();
+describe('List (contacts) page', function () {
+  describe('Handle data error conditions', function() {
+    before(function (done) {
+      bookshelf.knex('contacts').truncate().then(function () {
+        done();
+      });
+    });
+
+    it('successly shows empty page when no data', function (done) {
+      var options = {
+        method: 'GET',
+        url: '/list'
+      };
+
+      server.inject(options, function (siResponse) {
+        expect(siResponse.statusCode).to.equal(200);
+        expect(siResponse.headers['content-type']).to.equal('text/html');
+        expect(siResponse.payload).to.not.contain('<div class="thumbnail">');
+        done();
+      });
     });
   });
-});
-
-after(function (done) {
-  bookshelf.knex('contacts').truncate().then(function () {
-    done();
-  });
-});
-
-describe('List (contacts) page', function () {
 
   describe('Show contacts from test database', function() {
+    before(function (done) {
+      bookshelf.knex.migrate.latest().then(function () {
+        bookshelf.knex.seed.run().then(function () {
+          done();
+        });
+      });
+    });
+
+    after(function (done) {
+      bookshelf.knex('contacts').truncate().then(function () {
+        done();
+      });
+    });
+
     it('lists first test contact', function (done) {
       var options = {
         method: 'GET',

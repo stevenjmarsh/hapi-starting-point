@@ -5,7 +5,9 @@
       <h2 class="page-header">Member List</h2>
     </div>
     <div class="col-md-4 text-center">
-      {{> contact }}
+      {{#contacts}}
+        {{> contact }}
+      {{/contacts}}
     </div>
   </div>
   <!-- /.row -->

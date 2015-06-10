@@ -1,12 +1,17 @@
 'use strict';
 
+var models = require('../models/contacts'),
+  utils = require('../utils/utils');
+
 module.exports = {
   index: function (request, reply) {
     reply.view('index');
   },
 
   list: function (request, reply) {
-    reply.view('list');
+    models.Contact.fetchAll().then(function (contacts) {
+      reply.view('list', { contacts: contacts.toJSON() });
+    });
   },
 
   about: function (request, reply) {
