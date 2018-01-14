@@ -33,7 +33,7 @@
     "boom": "^2.7.2",
     "good": "^6.1.0",
     "good-console": "^5.0.0",
-    "handlebars": "^3.0.1",
+    "handlebars": "^4.0.11",
     "hapi": "^8.4.0",
     "hapi-named-routes": "^0.3.0",
     "joi": "^6.4.2",
