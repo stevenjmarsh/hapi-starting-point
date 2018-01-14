@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "lab -c",
-    "start": "./bin/www"
+    "start": "./bin/www",
+    "knex:migrate": "knex migrate:latest",
+    "knex:seed": "knex seed:run"
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,7 @@
     "boom": "^2.7.2",
     "good": "^6.1.0",
     "good-console": "^5.0.0",
-    "handlebars": "^3.0.1",
+    "handlebars": "^4.0.11",
     "hapi": "^8.4.0",
     "hapi-named-routes": "^0.3.0",
     "joi": "^6.4.2",
@@ -47,6 +49,7 @@
     "gulp-jshint": "^1.10.0",
     "gulp-lab": "^1.0.5",
     "gulp-nodemon": "^2.0.2",
+    "jshint": "^2.9.5",
     "jshint-stylish": "^1.0.1",
     "lab": "^5.6.1",
     "require-reload": "^0.2.2"
