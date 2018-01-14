@@ -78,8 +78,11 @@ Here is a list of packages, features, and best practices I wanted to gain experi
     - [config](https://www.npmjs.com/package/config)
 
 <br>
-## Installation 
+
+## Installation
+
 #### Prerequisites
+
 Make sure the following are installed prior to starting the install steps:
 
 Applications: node, npm, git
@@ -162,6 +165,7 @@ Here is a slightly more detailed list of the gulp tasks provided.
         + copy create more of these tests as you wish
 
 <br>
+
 ## Dev Journal
 Application/Technical notes and perspectives/thoughts captured while coding...
 #### Tech Notes
